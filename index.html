@@ -4,295 +4,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WanderWise - AI Trip Planner</title>
+  <title>KRACHI WORLD | Explore India</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header class="header">
-  <a href="#home" class="logo">🌿 WanderWise</a>
-
-  <nav class="nav">
-    <a href="#home" data-en="Home" data-mr="मुख्यपृष्ठ" data-hi="होम">Home</a>
-    <a href="#planner" data-en="Plan Trip" data-mr="ट्रिप प्लॅन" data-hi="ट्रिप प्लान">Plan Trip</a>
-    <a href="#itinerary" data-en="Day-wise Plan" data-mr="दिवसानुसार प्लॅन" data-hi="दिन के अनुसार प्लान">Day-wise Plan</a>
-    <a href="#destinations" data-en="Places" data-mr="ठिकाणे" data-hi="जगहें">Places</a>
-    <a href="#maps" data-en="Maps" data-mr="नकाशा" data-hi="नक्शा">Maps</a>
-    <a href="#budget" data-en="Budget" data-mr="बजेट" data-hi="बजट">Budget</a>
-    <a href="#tools" data-en="More Features" data-mr="अधिक फीचर्स" data-hi="अन्य सुविधाएँ">More Features</a>
+<header class="topbar">
+  <a class="brand" href="#home">✈ KRACHI WORLD</a>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <nav id="nav">
+    <a href="#home">Home</a><a href="#plan">Plan</a>
+    <a href="#picks">AI Picks</a><a href="#explore">Explore</a>
+    <a href="#itinerary">Itinerary</a><a href="#weather">Weather</a>
+    <a href="#map">Map</a><a href="#budget">Budget</a>
+    <a href="#hotels">Hotels</a><a href="#food">Food</a>
+    <a href="#chatbot">Chatbot</a><a href="#trips">My Trips</a>
   </nav>
-
-  <div class="header-tools">
-    <select id="languageSelect" aria-label="Choose language">
-      <option value="en">English</option>
-      <option value="mr">मराठी</option>
-      <option value="hi">हिन्दी</option>
-    </select>
-    <button id="darkToggle" class="small-btn" type="button">🌙</button>
-  </div>
 </header>
 
+<section id="home" class="hero">
+  <div class="hero-content">
+    <span class="tag">✦ YOUR JOURNEY, YOUR STORY ✦</span>
+    <h1>KRACHI <span>WORLD</span></h1>
+    <h2>Explore India. Discover Yourself.</h2>
+    <p>Your colourful travel companion to discover beautiful places, plan trips and create unforgettable memories.</p>
+    <a class="btn" href="#plan">Plan My Trip ✈</a>
+    <a class="btn btn-light" href="#explore">Explore India</a>
+  </div>
+</section>
+
 <main>
-  <!-- PAGE 1: HOME -->
-  <section id="home" class="hero page">
-    <div class="hero-content">
-      <span class="tag">✈ EXPLORE • DREAM • DISCOVER</span>
-      <h1 data-en="Your Journey, Your Story" data-mr="तुमचा प्रवास, तुमची गोष्ट" data-hi="आपकी यात्रा, आपकी कहानी">Your Journey, Your Story</h1>
-      <p data-en="Discover beautiful places and plan your perfect trip, day by day."
-         data-mr="सुंदर ठिकाणे शोधा आणि प्रत्येक दिवसाचा प्रवास प्लॅन करा."
-         data-hi="सुंदर जगहें खोजें और हर दिन की यात्रा की योजना बनाएँ.">
-         Discover beautiful places and plan your perfect trip, day by day.
-      </p>
-      <a class="btn" href="#planner" data-en="Plan My Trip →" data-mr="ट्रिप प्लॅन करा →" data-hi="ट्रिप प्लान करें →">Plan My Trip →</a>
-    </div>
-  </section>
-
-  <section class="section intro">
-    <p class="eyebrow">YOUR NEXT ADVENTURE</p>
-    <h2>Travel more. Worry less.</h2>
-    <p>Explore destinations, arrange daily sightseeing, track your expenses and keep all your trip details in one place.</p>
-    <div class="shayari-grid">
-      <article class="shayari">
-        <span>🌿</span>
-        <p>"Let the mountains whisper, and let your soul wander."</p>
-      </article>
-      <article class="shayari">
-        <span>🌅</span>
-        <p>"Every sunrise brings a new road and a new story."</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- PAGE 2: TRIP PLANNER -->
-  <section id="planner" class="section page">
-    <p class="eyebrow">START YOUR JOURNEY</p>
-    <h2 data-en="Plan Your Trip" data-mr="तुमची ट्रिप प्लॅन करा" data-hi="अपनी ट्रिप प्लान करें">Plan Your Trip</h2>
-
-    <form id="tripForm" class="panel form-grid">
-      <label>
-        Destination
-        <input id="destinationInput" list="destinationList" placeholder="e.g. Manali" required>
-        <datalist id="destinationList">
-          <option value="Manali"><option value="Goa"><option value="Jaipur">
-          <option value="Mumbai"><option value="Pune"><option value="Mahabaleshwar">
-          <option value="Kerala"><option value="Shimla"><option value="Rishikesh">
-          <option value="Agra"><option value="Lonavala"><option value="Nashik">
-        </datalist>
-      </label>
-
-      <label>
-        Start Date
-        <input type="date" id="startDate" required>
-      </label>
-
-      <label>
-        Number of Days
-        <select id="daysInput">
-          <option value="1">1 Day</option>
-          <option value="2">2 Days</option>
-          <option value="3" selected>3 Days</option>
-          <option value="4">4 Days</option>
-          <option value="5">5 Days</option>
-          <option value="6">6 Days</option>
-          <option value="7">7 Days</option>
+<section id="plan" class="section">
+  <h2 class="section-title">🌈 Plan Your Dream Trip</h2>
+  <p class="subtitle">Tell us your travel details and get a suggested trip plan.</p>
+  <div class="panel">
+    <div class="form-grid">
+      <label>Destination
+        <select id="destination">
+          <option value="Goa">Goa</option><option>Mahabaleshwar</option>
+          <option>Lonavala</option><option>Jaipur</option><option>Manali</option>
+          <option>Mumbai</option><option>Pune</option><option>Delhi</option>
+          <option>Agra</option><option>Kerala</option><option>Udaipur</option>
+          <option>Varanasi</option><option>Darjeeling</option><option>Ooty</option>
+          <option>Hyderabad</option><option>Kolkata</option><option>Amritsar</option>
+          <option>Rishikesh</option><option>Andaman</option><option>Coorg</option>
+          <option>Shimla</option><option>Jaisalmer</option>
         </select>
       </label>
-
-      <label>
-        Number of Travellers
-        <input type="number" id="travellersInput" min="1" max="100" value="2" required>
+      <label>Number of days<input id="days" type="number" min="1" max="30" value="3"></label>
+      <label>Travellers<input id="travellers" type="number" min="1" value="2"></label>
+      <label>Budget (₹)<input id="tripBudget" type="number" min="0" value="10000"></label>
+      <label>Travel style
+        <select id="style"><option>Adventure</option><option>Nature</option><option>Family</option><option>Relaxation</option><option>Culture</option></select>
       </label>
-
-      <label>
-        Travel Style
-        <select id="travelStyle">
-          <option value="Nature">Nature & Mountains</option>
-          <option value="Adventure">Adventure</option>
-          <option value="Culture">History & Culture</option>
-          <option value="Relax">Relaxing Holiday</option>
-          <option value="Family">Family Trip</option>
-        </select>
-      </label>
-
-      <label>
-        Budget per Person (₹)
-        <input type="number" id="budgetInput" min="0" value="10000" required>
-      </label>
-
-      <button class="btn full" type="submit">✨ Generate Day-wise Trip</button>
-    </form>
-    <p class="hint">Note: This planner generates a sample itinerary using built-in destination suggestions. Check local timings and availability before travelling.</p>
-  </section>
-
-  <!-- PAGE 3: ITINERARY -->
-  <section id="itinerary" class="section page">
-    <p class="eyebrow">YOUR DAILY ADVENTURE</p>
-    <h2>Day-wise Itinerary</h2>
-    <div id="tripSummary" class="summary panel">
-      <h3>Your trip will appear here</h3>
-      <p>Choose a destination and generate your trip above.</p>
+      <label>Start date<input id="startDate" type="date"></label>
     </div>
-    <div id="dayTabs" class="day-tabs"></div>
-    <div id="itineraryResults" class="place-grid">
-      <div class="empty-state">🧭 Generate a trip to see places arranged day by day.</div>
-    </div>
-    <div class="action-row">
-      <button class="btn" id="downloadBtn" type="button">⬇ Download Itinerary</button>
-      <button class="btn btn-light" id="printBtn" type="button">🖨 Print Itinerary</button>
-    </div>
-  </section>
+    <button class="btn" onclick="makeTrip()">Create My Itinerary ✨</button>
+    <div id="tripMessage" class="result"></div>
+  </div>
+</section>
 
-  <!-- PAGE 4: DESTINATIONS -->
-  <section id="destinations" class="section page">
-    <p class="eyebrow">FIND YOUR HAPPY PLACE</p>
-    <h2>Destination Gallery</h2>
-    <p>Search a destination and explore its suggested attractions.</p>
-    <input id="placeSearch" class="search-box" type="search" placeholder="Search places, e.g. Goa, Manali...">
-    <div id="destinationGallery" class="destination-grid"></div>
-  </section>
+<section id="picks" class="section tinted">
+  <h2 class="section-title">🤖 AI Travel Picks</h2>
+  <p class="subtitle">Discover destinations selected from our travel collection.</p>
+  <div id="picksGrid" class="cards"></div>
+  <button class="btn center-btn" onclick="showMore()">Show More Destinations ↓</button>
+</section>
 
-  <!-- PAGE 5: MAPS -->
-  <section id="maps" class="section page">
-    <p class="eyebrow">FIND YOUR WAY</p>
-    <h2>Explore with Google Maps</h2>
-    <div class="panel">
-      <label for="mapSearch">Enter a place or destination</label>
-      <div class="inline-form">
-        <input id="mapSearch" placeholder="Search a place...">
-        <button id="mapBtn" class="btn" type="button">Open Map</button>
-      </div>
-      <p class="hint">Google Maps opens in a new tab. Internet connection is required.</p>
-    </div>
-    <div id="mapSuggestions" class="quick-links"></div>
-  </section>
+<section id="explore" class="section">
+  <h2 class="section-title">🇮🇳 Explore Incredible India</h2>
+  <p class="subtitle">Find your next favourite destination.</p>
+  <input class="search" id="placeSearch" placeholder="🔎 Search city or destination..." oninput="searchPlaces()">
+  <div id="placesGrid" class="cards"></div>
+</section>
 
-  <!-- PAGE 6: BUDGET -->
-  <section id="budget" class="section page">
-    <p class="eyebrow">PLAN YOUR SPENDING</p>
-    <h2>Trip Budget Calculator</h2>
-    <div class="panel form-grid">
-      <label>Travellers <input type="number" id="budgetPeople" min="1" value="2"></label>
-      <label>Days <input type="number" id="budgetDays" min="1" value="3"></label>
-      <label>Hotel cost per night (₹) <input type="number" id="hotelCost" min="0" value="2000"></label>
-      <label>Food per person/day (₹) <input type="number" id="foodCost" min="0" value="600"></label>
-      <label>Transport total (₹) <input type="number" id="transportCost" min="0" value="3000"></label>
-      <label>Activities total (₹) <input type="number" id="activityCost" min="0" value="2000"></label>
-      <button id="calculateBudget" class="btn full" type="button">Calculate Budget</button>
-    </div>
-    <div id="budgetResult" class="budget-result">
-      <span>Estimated Total</span><strong>₹0</strong>
-    </div>
-  </section>
-
-  <!-- PAGE 7: EXPENSE TRACKER -->
-  <section id="expenses" class="section page">
-    <p class="eyebrow">KEEP TRACK</p>
-    <h2>Daily Expense Tracker</h2>
-    <form id="expenseForm" class="panel inline-form">
-      <input id="expenseName" placeholder="Expense name" required>
-      <input id="expenseAmount" type="number" min="1" placeholder="Amount ₹" required>
-      <select id="expenseCategory">
-        <option>Food</option><option>Travel</option><option>Hotel</option>
-        <option>Shopping</option><option>Activities</option><option>Other</option>
+<section id="itinerary" class="section tinted">
+  <h2 class="section-title">🗓️ Day-wise Itinerary</h2>
+  <p class="subtitle">Your trip, organised day by day.</p>
+  <div class="panel">
+    <label>Select destination
+      <select id="itineraryPlace" onchange="displayItinerary()">
+        <option>Goa</option><option>Mahabaleshwar</option><option>Lonavala</option>
+        <option>Jaipur</option><option>Manali</option><option>Mumbai</option>
+        <option>Kerala</option><option>Delhi</option><option>Agra</option>
+        <option>Udaipur</option><option>Ooty</option><option>Shimla</option>
       </select>
-      <button class="btn" type="submit">Add Expense</button>
-    </form>
-    <div id="expenseTotal" class="budget-result"><span>Total Expenses</span><strong>₹0</strong></div>
-    <div id="expenseList" class="list-panel"></div>
-  </section>
+    </label>
+    <div id="itineraryOutput" class="itinerary-list"></div>
+  </div>
+</section>
 
-  <!-- PAGE 8: PACKING -->
-  <section id="packing" class="section page">
-    <p class="eyebrow">DON'T FORGET THE ESSENTIALS</p>
-    <h2>Packing Checklist</h2>
-    <div class="panel">
-      <div class="packing-progress"><span id="packingProgress">0 of 0 packed</span></div>
-      <div id="packingList" class="checklist"></div>
-      <form id="packingForm" class="inline-form">
-        <input id="customPacking" placeholder="Add your own item">
-        <button class="btn" type="submit">Add Item</button>
-      </form>
-      <button id="resetPacking" class="btn btn-light" type="button">Reset Checklist</button>
-    </div>
-  </section>
+<section id="weather" class="section">
+  <h2 class="section-title">🌤️ Live Weather</h2>
+  <p class="subtitle">Check the latest available weather forecast for your destination.</p>
+  <div class="panel weather-panel">
+    <input id="weatherCity" placeholder="Enter city, e.g. Pune">
+    <button class="btn" onclick="getWeather()">Check Weather</button>
+    <div id="weatherResult" class="result">Weather information will appear here.</div>
+  </div>
+</section>
 
-  <!-- PAGE 9: WEATHER -->
-  <section id="weather" class="section page">
-    <p class="eyebrow">CHECK BEFORE YOU GO</p>
-    <h2>Weather Information</h2>
-    <div class="panel">
-      <p>Search your destination to check its current weather forecast online.</p>
-      <div class="inline-form">
-        <input id="weatherCity" placeholder="Enter city name">
-        <button id="weatherBtn" class="btn" type="button">Check Weather</button>
-      </div>
-      <p class="hint">This opens a weather search page. Live weather data is not built into this demo.</p>
-    </div>
-  </section>
+<section id="map" class="section tinted">
+  <h2 class="section-title">📍 Explore on Map</h2>
+  <p class="subtitle">Find your destination on the map.</p>
+  <div class="panel">
+    <input id="mapPlace" placeholder="Enter a place, e.g. Gateway of India, Mumbai">
+    <button class="btn" onclick="showMap()">Show on Map</button>
+    <iframe id="mapFrame" title="Travel map" src="https://www.openstreetmap.org/export/embed.html?bbox=72.7%2C18.8%2C73.1%2C19.3&layer=mapnik"></iframe>
+    <a id="mapLink" target="_blank" rel="noopener">Open directions in Google Maps ↗</a>
+  </div>
+</section>
 
-  <!-- PAGE 10: HOTELS -->
-  <section id="hotels" class="section page">
-    <p class="eyebrow">REST AND RECHARGE</p>
-    <h2>Hotel Suggestions</h2>
-    <p>Search hotels in your selected destination.</p>
-    <div class="panel inline-form">
-      <input id="hotelCity" placeholder="Enter destination">
-      <button id="hotelBtn" class="btn" type="button">Find Hotels</button>
+<section id="budget" class="section">
+  <h2 class="section-title">💰 Smart Budget Planner</h2>
+  <p class="subtitle">Estimate your trip expenses.</p>
+  <div class="panel">
+    <div class="form-grid">
+      <label>Travel cost ₹<input type="number" id="travelCost" value="2000"></label>
+      <label>Hotel cost per night ₹<input type="number" id="hotelCost" value="1500"></label>
+      <label>Number of nights<input type="number" id="nights" value="2"></label>
+      <label>Food cost per day ₹<input type="number" id="foodCost" value="700"></label>
+      <label>Other expenses ₹<input type="number" id="otherCost" value="1000"></label>
     </div>
-    <div class="feature-grid">
-      <article class="feature-card"><span>🏨</span><h3>Budget Stay</h3><p>Search affordable hotels and guest houses.</p></article>
-      <article class="feature-card"><span>🏡</span><h3>Family Stay</h3><p>Look for family-friendly accommodation.</p></article>
-      <article class="feature-card"><span>🌴</span><h3>Nature Stay</h3><p>Explore stays close to nature.</p></article>
-    </div>
-  </section>
+    <button class="btn" onclick="calculateBudget()">Calculate Budget</button>
+    <div id="budgetResult" class="result"></div>
+  </div>
+</section>
 
-  <!-- PAGE 11: TRANSPORT -->
-  <section id="transport" class="section page">
-    <p class="eyebrow">GET THERE YOUR WAY</p>
-    <h2>Transport Options</h2>
-    <div class="panel">
-      <label for="transportFrom">Starting city</label>
-      <input id="transportFrom" placeholder="e.g. Pune">
-      <label for="transportTo">Destination</label>
-      <input id="transportTo" placeholder="e.g. Goa">
-      <div class="transport-grid">
-        <button class="feature-card transport-btn" data-mode="train" type="button">🚆<h3>Train</h3><p>Search train options</p></button>
-        <button class="feature-card transport-btn" data-mode="bus" type="button">🚌<h3>Bus</h3><p>Search bus options</p></button>
-        <button class="feature-card transport-btn" data-mode="flight" type="button">✈️<h3>Flight</h3><p>Search flight options</p></button>
-        <button class="feature-card transport-btn" data-mode="car" type="button">🚗<h3>Car</h3><p>Get driving directions</p></button>
-      </div>
-    </div>
-  </section>
+<section id="hotels" class="section tinted">
+  <h2 class="section-title">🏨 Hotels & Stays</h2>
+  <p class="subtitle">Find accommodation options for your destination.</p>
+  <div class="panel">
+    <input id="hotelCity" placeholder="Enter destination">
+    <button class="btn" onclick="findHotels()">Find Hotels</button>
+    <div id="hotelResult" class="result"></div>
+  </div>
+  <p class="small-note">Hotel links open external search pages. Check prices, reviews and details before booking.</p>
+</section>
 
-  <!-- PAGE 12: FAVOURITES + EXTRA TOOLS -->
-  <section id="tools" class="section page">
-    <p class="eyebrow">YOUR TRAVEL TOOLKIT</p>
-    <h2>More Travel Features</h2>
-    <div class="feature-grid">
-      <a class="feature-card" href="#favourites"><span>❤️</span><h3>Favourites</h3><p>Save places you love.</p></a>
-      <a class="feature-card" href="#packing"><span>🎒</span><h3>Packing List</h3><p>Keep your essentials ready.</p></a>
-      <a class="feature-card" href="#expenses"><span>💰</span><h3>Expense Tracker</h3><p>Record your trip expenses.</p></a>
-      <a class="feature-card" href="#maps"><span>📍</span><h3>Google Maps</h3><p>Find directions to attractions.</p></a>
-    </div>
-  </section>
+<section id="food" class="section">
+  <h2 class="section-title">🍜 Food & Local Flavours</h2>
+  <p class="subtitle">Discover popular dishes from different parts of India.</p>
+  <div class="cards">
+    <article class="food-card"><div class="food-emoji">🥘</div><h3>Maharashtra</h3><p>Misal Pav, Vada Pav, Puran Poli</p></article>
+    <article class="food-card"><div class="food-emoji">🍛</div><h3>Punjab</h3><p>Chole Bhature, Amritsari Kulcha</p></article>
+    <article class="food-card"><div class="food-emoji">🥞</div><h3>South India</h3><p>Dosa, Idli, Appam, Sambar</p></article>
+    <article class="food-card"><div class="food-emoji">🍲</div><h3>Rajasthan</h3><p>Dal Baati Churma, Gatte ki Sabzi</p></article>
+    <article class="food-card"><div class="food-emoji">🍮</div><h3>West Bengal</h3><p>Rasgulla, Mishti Doi, Kathi Roll</p></article>
+    <article class="food-card"><div class="food-emoji">🥥</div><h3>Goa</h3><p>Goan fish curry, Bebinca, local vegetarian dishes</p></article>
+  </div>
+</section>
 
-  <section id="favourites" class="section page">
-    <p class="eyebrow">SAVED FOR LATER</p>
-    <h2>My Favourite Places ❤️</h2>
-    <div id="favouriteList" class="destination-grid">
-      <div class="empty-state">Your favourite places will appear here.</div>
+<section id="chatbot" class="section tinted">
+  <h2 class="section-title">💬 Krachi Travel Assistant</h2>
+  <p class="subtitle">Ask travel-related questions in English or simple Marathi.</p>
+  <div class="chatbox">
+    <div id="chatMessages" class="chat-messages">
+      <div class="bot-msg">Hi! Welcome to Krachi World! ✈️<br>Ask me about destinations, weather, budget, food or travel tips.</div>
     </div>
-  </section>
+    <div class="chat-controls">
+      <input id="chatInput" placeholder="Ask a travel question..." onkeydown="if(event.key==='Enter') sendMessage()">
+      <button class="btn" onclick="sendMessage()">Send ➤</button>
+    </div>
+  </div>
+  <p class="small-note">This is a travel-focused demo assistant using built-in replies, not a live generative AI service.</p>
+</section>
+
+<section id="trips" class="section">
+  <h2 class="section-title">⭐ My Trips & Travel Tips</h2>
+  <p class="subtitle">Your saved trip plans will appear here.</p>
+  <div id="savedTrips" class="cards"></div>
+  <div class="tips">
+    <h3>✦ Smart Travel Tips</h3>
+    <p>✓ Keep your ID and important documents safe.</p>
+    <p>✓ Check weather and local travel updates before leaving.</p>
+    <p>✓ Respect local culture and keep tourist places clean.</p>
+    <p>✓ Share your travel plan with your family.</p>
+    <p>✓ Keep emergency contacts handy.</p>
+  </div>
+</section>
 </main>
 
-<footer class="footer">
-  <a class="logo" href="#home">🌿 WanderWise</a>
-  <p>Explore the world, one day at a time.</p>
-  <p class="hint">A student project demo. Confirm travel, weather and booking details with the relevant providers.</p>
+<footer>
+  <h2>✈ KRACHI WORLD</h2>
+  <p>Explore More. Travel Better. Make Memories.</p>
+  <p>Made with 💜 for travel lovers</p>
+  <button class="theme-btn" onclick="toggleTheme()">🌙 Change Theme</button>
+  <p>© 2026 Krachi World</p>
 </footer>
-
-<button id="topBtn" class="top-btn" type="button" aria-label="Back to top">↑</button>
-
 <script src="script.js"></script>
 </body>
 </html>
